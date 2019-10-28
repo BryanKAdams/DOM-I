@@ -41,19 +41,33 @@ const siteContent = {
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
 //NAV STUFF
-let nav = document.getElementsByTagName('a');
+let nav = document.querySelectorAll('nav a');
 nav[0].textContent = siteContent["nav"]["nav-item-1"];
 nav[1].textContent = siteContent["nav"]["nav-item-2"];
 nav[2].textContent = siteContent["nav"]["nav-item-3"];
 nav[3].textContent = siteContent["nav"]["nav-item-4"];
 nav[4].textContent = siteContent["nav"]["nav-item-5"];
 nav[5].textContent = siteContent["nav"]["nav-item-6"];
+let eggContent = document.createElement("a");
+eggContent.textContent = "I suck eggs";
+let beeContent = document.createElement("a");
+beeContent.textContent = "ya like jazz?"
+let secondaryContent = document.querySelector('nav');
+secondaryContent.prepend(eggContent);
+secondaryContent.append(beeContent);
+
+let navItems2 = document.querySelectorAll('a');
+navItems2.forEach(function (a){
+  a.style.color = "darkolivegreen";
+  a.style.fontWeight = "bold";
+})
 
 // Call to action Stuff
 let ctaText = document.querySelector(".cta-text h1");
 ctaText.textContent = siteContent["cta"]["h1"];
 let ctaButt = document.querySelector(".cta-text button");
 ctaButt.textContent = siteContent["cta"]["button"];
+document.querySelector(".cta h1").innerHTML = "DOM<br>IS<br>AWESOME";;
 
 //CTA image
 let cta = document.getElementById("cta-img");
@@ -103,6 +117,7 @@ let contactp2 = document.querySelector('.contact p:nth-of-type(2)');
 contactp2.textContent = siteContent["contact"]["phone"];
 let contactp3 = document.querySelector('.contact p:nth-of-type(3)');
 contactp3.textContent = siteContent["contact"]["email"];
+document.querySelector(".contact p:nth-of-type(1)").innerHTML = "123 Way 456 Street<br> Somewhere, USA";;
 
 //footer section
 let footerp = document.querySelector('footer p');
